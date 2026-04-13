@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-primary: "Josefin Sans";
+    --font-secondary: "Quicksand", sans-serif;
+    --color-primary: #131842;
+    --color-secondary: #e68369;
+    --color-tertiary: #ecceae;
+    --color-background: #fbf6e2;
+    --color-shadow-light: rgba(251, 246, 226, 0.5);
+  }
+
+  html {
+    scroll-padding-top: 60px;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    padding: 1rem;
+    @apply flex flex-col relative;
+  }
+
+  nav {
+    @apply flex p-2 gap-2;
+  }
+
+  h1 {
+    font-family: var(--font-primary);
+    color: var(--color-secondary);
+    @apply text-4xl font-black;
+  }
+
+  h2 {
+    font-family: var(--font-primary);
+    font-weight: bolder;
+    @apply text-2xl text-center sm:text-left py-2 pb-8;
+  }
+
+  h3 {
+    font-family: var(--font-primary);
+    font-weight: bolder;
+    @apply text-xl;
+  }
+
+  p,
+  li,
+  a,
+  form {
+    font-family: var(--font-secondary);
+  }
+}
+
+@layer components {
+  nav div a {
+    @apply [text-shadow:0_0_10px_var(--color-shadow-light)] font-bold hover:text-(--color-secondary);
+  }
+
+  .experience {
+    background-color: var(--color-tertiary);
+    @apply rounded-2xl p-2  w-full flex flex-col gap-2;
+  }
+
+  .experience div {
+    @apply w-full flex gap-4 justify-start;
+  }
+
+  .experience div img {
+    background-color: var(--color-primary);
+    @apply rounded-full aspect-square object-contain max-h-12;
+  }
+
+  .experience div div {
+    @apply flex flex-col gap-1;
+  }
+
+  .experience div div p {
+    @apply text-xs;
+  }
+
+  .experience div ul {
+    @apply list-disc pl-5 list-outside;
+  }
+
+  .experience div ul li {
+    @apply text-sm;
+  }
+
+  nav a img {
+    @apply px-1 py-2 aspect-square h-15 drop-shadow-[0_0_5px_var(--color-shadow-light)];
+  }
+
+  button {
+    @apply font-black bg-linear-to-br from-indigo-600 to-pink-400 py-2 px-3 text-(--color-background) rounded-3xl drop-shadow-md drop-shadow-slate-600 hover:scale-105 duration-500 ease-in-out;
+  }
+
+  .card {
+    background-color: var(--color-primary);
+    @apply flex flex-col w-full rounded-xl px-8 py-8 text-center items-center drop-shadow-md drop-shadow-slate-600 hover:scale-105 duration-500 ease-in-out;
+  }
+
+  .card img {
+    @apply rounded-full aspect-square object-cover w-25 bg-white border-(--color-tertiary) border-4;
+  }
+
+  .card h3 {
+    color: var(--color-background);
+    @apply py-4;
+  }
+
+  .card p {
+    color: var(--color-background);
+  }
+
+  form div {
+    @apply w-full;
+  }
+
+  form div input {
+    @apply w-full border px-1 rounded-md;
+  }
+
+  form div select {
+    @apply w-full border rounded-md;
+  }
+
+  form div textarea {
+    @apply w-full  border px-1 rounded-md;
+  }
+
+  div div ul li {
+    @apply sm:text-left;
+  }
+
+  footer {
+    @apply flex flex-col gap-2 text-sm mb-19 border-t-2 p-2 text-center sm:mb-0 mt-10;
+  }
+
+  footer div div a img {
+    @apply aspect-square w-8;
+  }
+
+  .project-details {
+    @apply text-left;
+  }
+
+  .project-images {
+    @apply flex flex-col items-center;
+  }
+
+  .project-details div h2 {
+    @apply text-left w-full pt-4 pb-2;
+  }
+
+  .project-images img {
+    @apply rounded-full aspect-square w-50 my-4 bg-white border-(--color-tertiary) border-8 object-cover;
+  }
+
+  .project-images div {
+    @apply flex flex-row w-full justify-center gap-4;
+  }
+
+  .project-images div img {
+    @apply rounded-none aspect-square w-25 border-none bg-none hover:scale-[2] lg:hover:scale-[2.5] transition-all ease-in-out duration-500 hover:z-50;
+  }
+
+  .project-images div video {
+    @apply rounded-md aspect-square w-25 border-none bg-none;
+  }
+
+  .scope {
+    @apply list-disc list-outside;
+  }
+
+  .scope div {
+    @apply bg-(--color-tertiary) rounded-2xl p-4;
+  }
+
+  .scope ul {
+    @apply list-disc list-outside pl-5;
+  }
+
+  .scope ul li {
+    @apply bg-none p-0;
+  }
+}
